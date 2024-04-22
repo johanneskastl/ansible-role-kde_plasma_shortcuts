@@ -1,0 +1,33 @@
+galaxy_info:
+  role_name: 'kde_plasma_shortcuts'
+  namespace: 'johanneskastl'
+  author: 'Johannes Kastl'
+  description: 'Adjust KDE Plasma6 shortcuts (in a German localization) to my personal preference'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: '2.12'
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+    - name: SLES
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,98 @@
+---
+# kde_plasma_shortcuts/tasks/main.yml
+
+- name: 'Set shortcut for maximizing a windows'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: '^Window Maximize='
+    line: 'Window Maximize=Meta+Up,Meta+PgUp,Fenster maximieren'
+    mode: '0600'
+
+- name: 'Set shortcut for minizing a windows'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: '^Window Minimize='
+    line: 'Window Minimize=Meta+Down,Meta+PgDown,Fenster minimieren'
+    mode: '0600'
+
+- name: 'Set shortcut for showing the desktop (and temporarily minimizing all windows)'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: '^Show Desktop='
+    line: 'Show Desktop=Meta+D,Meta+D,Blick auf die Arbeitsfläche'
+    mode: '0600'
+
+- name: 'Set shortcut for killing a window'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: '^Kill Window='
+    line: 'Kill Window=Ctrl+Alt+Esc,Meta+Ctrl+Esc,Fenster beseitigen'
+    mode: '0600'
+
+- name: 'Set shortcut for jumping to virtual desktops'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: "{{ item.regex }}"
+    line: "{{ item.line }}"
+    mode: '0600'
+  loop:
+    - regex: '^Switch to Next Desktop='
+      line: 'Switch to Next Desktop=Meta+Ctrl+Right,,Zur nächsten Arbeitsfläche umschalten'
+    - regex: '^Switch to Previous Desktop='
+      line: 'Switch to Previous Desktop=Meta+Ctrl+Left,,Zur vorherigen Arbeitsfläche umschalten'
+    - regex: '^Switch One Desktop Down='
+      line: 'Switch One Desktop Down=none,Meta+Ctrl+Down,Eine Arbeitsfläche nach unten'
+    - regex: '^Switch One Desktop Up='
+      line: 'Switch One Desktop Up=none,Meta+Ctrl+Up,Eine Arbeitsfläche nach oben'
+    - regex: '^Switch One Desktop to the Left='
+      line: 'Switch One Desktop to the Left=none,Meta+Ctrl+Left,Eine Arbeitsfläche nach links'
+    - regex: '^Switch One Desktop to the Right='
+      line: 'Switch One Desktop to the Right=none,Meta+Ctrl+Right,Eine Arbeitsfläche nach rechts'
+    - regex: '^Switch to Desktop 1='
+      line: 'Switch to Desktop 1=Ctrl+F1,Ctrl+F1,Auf Arbeitsfläche 1 umschalten'
+    - regex: '^Switch to Desktop 2='
+      line: 'Switch to Desktop 2=Ctrl+F2,Ctrl+F2,Auf Arbeitsfläche 2 umschalten'
+    - regex: '^Switch to Desktop 3='
+      line: 'Switch to Desktop 3=Ctrl+F3,Ctrl+F3,Auf Arbeitsfläche 3 umschalten'
+    - regex: '^Switch to Desktop 4='
+      line: 'Switch to Desktop 4=Ctrl+F4,Ctrl+F4,Auf Arbeitsfläche 4 umschalten'
+    - regex: '^Switch to Desktop 5='
+      line: 'Switch to Desktop 5=Ctrl+F5,Ctrl+F5,Auf Arbeitsfläche 5 umschalten'
+    - regex: '^Switch to Desktop 6='
+      line: 'Switch to Desktop 6=Ctrl+F6,Ctrl+F6,Auf Arbeitsfläche 6 umschalten'
+    - regex: '^Switch to Desktop 7='
+      line: 'Switch to Desktop 7=Ctrl+F7,Ctrl+F7,Auf Arbeitsfläche 7 umschalten'
+    - regex: '^Switch to Desktop 8='
+      line: 'Switch to Desktop 8=Ctrl+F8,Ctrl+F8,Auf Arbeitsfläche 8 umschalten'
+
+- name: 'Set shortcut for arranging windows'
+  ansible.builtin.lineinfile:
+    path: '~/.config/kglobalshortcutsrc'
+    regex: "{{ item.regex }}"
+    line: "{{ item.line }}"
+    mode: '0600'
+  loop:
+    - regex: '^Window One Desktop Down='
+      line: 'Window One Desktop Down=none,Meta+Ctrl+Shift+Down,Fenster eine Arbeitsfläche nach unten'
+    - regex: '^Window One Desktop Up='
+      line: 'Window One Desktop Up=none,Meta+Ctrl+Shift+Up,Fenster eine Arbeitsfläche nach oben'
+    - regex: '^Window One Desktop to the Left='
+      line: 'Window One Desktop to the Left=none,Meta+Ctrl+Shift+Left,Fenster eine Arbeitsfläche nach links'
+    - regex: '^Window One Desktop to the Right='
+      line: 'Window One Desktop to the Right=none,Meta+Ctrl+Shift+Right,Fenster eine Arbeitsfläche nach rechts'
+    - regex: '^Window Quick Tile Bottom='
+      line: 'Window Quick Tile Bottom=none,Meta+Down,Fenster am unteren Bildschirmrand anordnen'
+    - regex: '^Window Quick Tile Bottom Left='
+      line: 'Window Quick Tile Bottom Left=Meta+Ctrl+Shift+Left,,Fenster am linken unteren Bildschirmrand anordnen'
+    - regex: '^Window Quick Tile Bottom Right='
+      line: 'Window Quick Tile Bottom Right=Meta+Ctrl+Shift+Right,,Fenster am rechten unteren Bildschirmrand anordnen'
+    - regex: '^Window Quick Tile Top='
+      line: 'Window Quick Tile Top=none,Meta+Up,Fenster am oberen Bildschirmrand anordnen'
+    - regex: '^Window Quick Tile Top Left='
+      line: 'Window Quick Tile Top Left=Meta+Shift+Left,,Fenster am linken oberen Bildschirmrand anordnen'
+    - regex: '^Window Quick Tile Top Right='
+      line: 'Window Quick Tile Top Right=Meta+Shift+Right,,Fenster am rechten oberen Bildschirmrand anordnen'
+    - regex: '^Window to Next Screen='
+      line: 'Window to Next Screen=none,Meta+Shift+Right,Fenster auf nächsten Bildschirm verschieben'
+    - regex: '^Window to Previous Screen='
+      line: 'Window to Previous Screen=none,Meta+Shift+Left,Fenster auf vorherigen Bildschirm verschieben'

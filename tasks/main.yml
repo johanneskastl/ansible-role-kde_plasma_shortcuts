@@ -57,13 +57,13 @@
     - regex: '^Switch to Desktop 4='
       line: 'Switch to Desktop 4=Ctrl+F4,Ctrl+F4,Auf Arbeitsfläche 4 umschalten'
     - regex: '^Switch to Desktop 5='
-      line: 'Switch to Desktop 5=Ctrl+F5,Ctrl+F5,Auf Arbeitsfläche 5 umschalten'
+      line: 'Switch to Desktop 5=Ctrl+F5,,Auf Arbeitsfläche 5 umschalten'
     - regex: '^Switch to Desktop 6='
-      line: 'Switch to Desktop 6=Ctrl+F6,Ctrl+F6,Auf Arbeitsfläche 6 umschalten'
+      line: 'Switch to Desktop 6=Ctrl+F6,,Auf Arbeitsfläche 6 umschalten'
     - regex: '^Switch to Desktop 7='
-      line: 'Switch to Desktop 7=Ctrl+F7,Ctrl+F7,Auf Arbeitsfläche 7 umschalten'
+      line: 'Switch to Desktop 7=Ctrl+F7,,Auf Arbeitsfläche 7 umschalten'
     - regex: '^Switch to Desktop 8='
-      line: 'Switch to Desktop 8=Ctrl+F8,Ctrl+F8,Auf Arbeitsfläche 8 umschalten'
+      line: 'Switch to Desktop 8=Ctrl+F8,,Auf Arbeitsfläche 8 umschalten'
 
 - name: 'Set shortcut for arranging windows'
   ansible.builtin.lineinfile:
